@@ -37,19 +37,19 @@ function Footer() {
             </Box>
             <Box display="flex" alignItems="center" justifyContent="center">
               <a
-                href="https://www.facebook.com/generationbrasil"
+                href="https://www.facebook.com/"
                 target="_blank"
               >
                 <FacebookIcon style={{ fontSize: 60, color: "white" }} />
               </a>
               <a
-                href="https://www.instagram.com/generationbrasil/"
+                href="https://www.instagram.com/"
                 target="_blank"
               >
                 <InstagramIcon style={{ fontSize: 60, color: "white" }} />
               </a>
               <a
-                href="https://www.linkedin.com/school/generationbrasil/"
+                href="https://www.linkedin.com/"
                 target="_blank"
               >
                 <LinkedInIcon style={{ fontSize: 60, color: "white" }} />
@@ -65,7 +65,7 @@ function Footer() {
                 style={{ color: "white" }}
                 component={"span"}
               >
-                © 2023 Copyright:
+                © 2023 Copyright Danilo Moraes
               </Typography>
 
               <a target="_blank" href="https://brasil.generation.org">
@@ -76,7 +76,6 @@ function Footer() {
                   align="center"
                   component={"span"}
                 >
-                  brasil.generation.org
                 </Typography>
               </a>
             </Box>

@@ -1,6 +1,15 @@
-.imagemLogin{
-    background-image: url('https://i.imgur.com/jAZOVhd.jpg');
+.imagemLogin {
+    background-image: url('https://i.giphy.com/media/10IbZpJN1k9D7q/giphy.webp');
     min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
-}
+  }
+  
+  .linkLogin {
+    text-decoration: underline;
+    color: var(--blue-600)
+  }
+  
+  .linkLogin:hover {
+    color: var(--blue-900)
+  }
