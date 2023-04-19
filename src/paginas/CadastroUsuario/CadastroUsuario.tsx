@@ -7,7 +7,7 @@ import { Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 
 function CadastroUsuario() {
-  const history = useNavigate();
+  let history = useNavigate();
 
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
@@ -48,7 +48,7 @@ function CadastroUsuario() {
         alert("Por favor, verifique os campos");
       }
     } else {
-      alert("As senhas não coincidem");
+      alert("Dados inconsistentes. Favor verificar as informações de cadastro");
       setConfirmarSenha("");
       setUsuario({
         ...usuario,
@@ -57,9 +57,6 @@ function CadastroUsuario() {
     }
   }
 
-  useEffect(() => {
-    console.log("rodou");
-  }, [usuario.nome]);
 
   useEffect(() => {
     if (usuarioResult.id !== 0) {
@@ -76,7 +73,7 @@ function CadastroUsuario() {
       <Grid item xs={6} className="imagem2"></Grid>
       <Grid item xs={6} alignItems="center">
         <Box paddingX={10}>
-          <form>
+          <form onSubmit={onSubmit}>
             <Typography
               variant="h3"
               align="center"
@@ -152,9 +149,10 @@ function CadastroUsuario() {
                 <Button
                   size="large"
                   variant="contained"
+                  type="submit"
                   color="primary"
                   fullWidth
-                  className="btnCancelar"
+                  className="btnCadastrar"
                 >
                   Cadastrar
                 </Button>
@@ -163,7 +161,6 @@ function CadastroUsuario() {
                 style={{ textDecoration: "none" }}
                 >
                 <Button
-                  type="submit"
                   size="large"
                   fullWidth
                   variant="contained"
