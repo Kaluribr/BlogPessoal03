@@ -6,6 +6,8 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from '@mui/material/styles';
+import { Link } from "react-router-dom";
+import './Navbar.css'
 
 function Navbar() {
   return (
@@ -27,20 +29,24 @@ function Navbar() {
                 </IconButton>
                 <Typography variant="h6" style={{fontFamily:'cursive'}}>BlogPessoal</Typography>
                 {/* Porquê está em component="div"?*/}
-                <Box style={{cursor: 'pointer'}}>
+                <Box className="cursor">
                   <p style={{fontFamily:'cursive'}}>Home</p>
                 </Box>
-                <Box style={{cursor: 'pointer'}}>
+                <Box className="cursor">
                   <p style={{fontFamily:'cursive'}}>Postagens</p>
                 </Box>
-                <Box style={{cursor: 'pointer'}}>
+                <Box className="cursor">
                   <p style={{fontFamily:'cursive'}}>Temas</p>
                 </Box>
-                <Box style={{cursor: 'pointer'}}>
+                <Box className="cursor">
                   <p style={{fontFamily:'cursive'}}>Cadastrar Tema</p>
                 </Box>
               </Box>
-              <Button color="inherit" style={{fontFamily:'cursive'}}>Logout</Button>
+              <Link to='./Login'>
+              <Box>
+              <Button color="inherit" style={{fontFamily:'cursive', textDecoration:'none', color:'white'}}>Logout</Button>
+              </Box>
+              </Link>
             </Box>
           </Toolbar>
         </AppBar>

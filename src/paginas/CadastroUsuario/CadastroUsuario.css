@@ -1,0 +1,11 @@
+.imagem2 {
+    background-image: url('https://i.giphy.com/media/10IbZpJN1k9D7q/giphy.webp');
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .btnCancelar{
+    display: flex !important;
+    justify-content: space- !important;
+  }
