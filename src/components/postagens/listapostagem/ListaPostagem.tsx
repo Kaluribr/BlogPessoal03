@@ -7,7 +7,7 @@ import { getAll } from '../../../service/Service';
 
 
 
-function ListaPostagens() {
+function ListaPostagem() {
 
   const[postagem, setPostagem] = useState<Postagem[]>([])
   const[token, setToken] = useLocalStorage('token')
@@ -68,4 +68,4 @@ function ListaPostagens() {
   )
 }
 
-export default ListaPostagens
+export default ListaPostagem
