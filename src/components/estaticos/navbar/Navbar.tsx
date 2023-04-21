@@ -6,10 +6,20 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from '@mui/material/styles';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Navbar.css'
+import useLocalStorage from "react-use-localstorage";
 
 function Navbar() {
+  const [token, setToken] = useLocalStorage('token')
+  let history = useNavigate()
+
+  function goLogout(){
+    setToken('')
+    alert('Usuario deslogado')
+    history('/login')
+  }
+
   return (
     <>
       {/* O que é sx={{ flexGrow: 1 }*/}
@@ -29,24 +39,32 @@ function Navbar() {
                 </IconButton>
                 <Typography variant="h6" style={{fontFamily:'cursive'}}>BlogPessoal</Typography>
                 {/* Porquê está em component="div"?*/}
+                <Link to='/home' className="text-decorator-none">
                 <Box className="cursor">
                   <p style={{fontFamily:'cursive'}}>Home</p>
                 </Box>
+                </Link>
+                <Link to='/postagem' className="text-decorator-none">
                 <Box className="cursor">
                   <p style={{fontFamily:'cursive'}}>Postagens</p>
                 </Box>
+                </Link>
+                <Link to='/tema' className="text-decorator-none">
                 <Box className="cursor">
                   <p style={{fontFamily:'cursive'}}>Temas</p>
                 </Box>
+                </Link>
+                <Link to='/formularioTema' className="text-decorator-none">
                 <Box className="cursor">
                   <p style={{fontFamily:'cursive'}}>Cadastrar Tema</p>
                 </Box>
+                </Link>
               </Box>
-              <Link to='./Login'>
-              <Box>
+              
+              <Box onClick={goLogout}>
               <Button color="inherit" style={{fontFamily:'cursive', textDecoration:'none', color:'white'}}>Logout</Button>
               </Box>
-              </Link>
+              
             </Box>
           </Toolbar>
         </AppBar>

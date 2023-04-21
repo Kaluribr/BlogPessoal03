@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AppBar from '@material-ui/core/AppBar';
 import Tab from '@material-ui/core/Tab';
 import TabContext from '@material-ui/lab/TabContext';
@@ -6,10 +6,11 @@ import TabList from '@material-ui/lab/TabList';
 import TabPanel from '@material-ui/lab/TabPanel';
 import ListaPostagem from '../listapostagem/ListaPostagem';
 import './TabPostagem.css'
+import { Box } from '@material-ui/core';
 
 function TabPostagens() {
-  const [value, setValue] = React.useState('1');
-  const handleChange = (event: React.ChangeEvent<{}>, newValue: string) => {
+  const [value, setValue] = useState('1')
+  function handleChange(event: React.ChangeEvent<{}>, newValue: string){
     setValue(newValue);
   };
 
@@ -23,7 +24,9 @@ function TabPostagens() {
           </TabList>
         </AppBar>
         <TabPanel value="1">
-          <ListaPostagem />
+          <Box display='flex' flexWrap='wrap' justifyContent='center'>
+            <ListaPostagem />
+          </Box>
         </TabPanel>
         <TabPanel value="2">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus similique nulla neque deserunt sed repudiandae ea accusantium, dicta nihil nisi nostrum ratione quod incidunt aspernatur delectus temporibus, sit, expedita recusandae.
