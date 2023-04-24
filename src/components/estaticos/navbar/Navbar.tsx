@@ -49,7 +49,7 @@ function Navbar() {
                   <p style={{fontFamily:'cursive'}}>Postagens</p>
                 </Box>
                 </Link>
-                <Link to='/tema' className="text-decorator-none">
+                <Link to='/temas' className="text-decorator-none">
                 <Box className="cursor">
                   <p style={{fontFamily:'cursive'}}>Temas</p>
                 </Box>

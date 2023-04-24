@@ -1,6 +1,8 @@
 import { Grid, Box, Typography, Button, } from "@material-ui/core";
 import "./Home.css";
 import TabPostagens from "../../components/postagens/tabpostagem/TabPostagem";
+import ModalPostagem from "../../components/postagens/modelPostagem/ModalPostagem";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -13,8 +15,11 @@ function Home() {
           </Box>
           <Box display="flex" justifyContent="center">
               <Box marginRight={1}>
+              <ModalPostagem/>
               </Box>
+              <Link to='/postagem'>
               <Button variant="outlined" className="botao">Ver Postagens</Button>
+              </Link>
           </Box>
         </Grid>
         <Grid item xs={6} style={{display:'flex', justifyContent:'center'}}>
