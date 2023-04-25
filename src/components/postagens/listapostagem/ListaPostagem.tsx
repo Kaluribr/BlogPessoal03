@@ -7,14 +7,14 @@ import { getAll } from '../../../service/Service';
 
 
 
-function ListaPostagem() {
+function ListaPostagens() {
 
-  const[postagem, setPostagem] = useState<Postagem[]>([])
+  const[postagens, setPostagens] = useState<Postagem[]>([])
   const[token, setToken] = useLocalStorage('token')
   const history = useNavigate()
 
-  async function getAllPostagem(){
-    await getAll('/postagens', setPostagem, {
+  async function getAllPostagens(){
+    await getAll('/postagens', setPostagens, {
       headers: {
         Authorization: token
       }
@@ -22,8 +22,8 @@ function ListaPostagem() {
   }
 
   useEffect(()=> {
-    getAllPostagem()
-  }, [postagem.length])
+    getAllPostagens()
+  }, [postagens.length])
 
   useEffect(() =>{
     if(token === ''){
@@ -35,7 +35,7 @@ function ListaPostagem() {
 
   return (
     <>
-    {postagem.map(postagem => (
+    {postagens.map((postagem) => (
           <Box m={2} >
             <Card variant="outlined">
               <CardContent>
@@ -55,7 +55,7 @@ function ListaPostagem() {
               <CardActions>
                 <Box display="flex" justifyContent="center" mb={1.5}>
 
-                  <Link to={`/formularioPostagem/${postagem.id}`} className="text-decorator-none" >
+                  <Link to={`/editarPostagem/${postagem.id}`} className="text-decorator-none" >
                     <Box mx={1}>
                       <Button variant="contained" className="marginLeft" size='small' color="primary" >
                         atualizar
@@ -79,4 +79,4 @@ function ListaPostagem() {
   )
 }
 
-export default ListaPostagem
+export default ListaPostagens;

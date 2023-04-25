@@ -24,13 +24,13 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/cadastrousuario" element={<CadastroUsuario />} />
           <Route path="/temas" element={<ListaTema />} />
-          <Route path="/Postagem" element={<ListaPostagem />} />
-          <Route path="/Postagem" element={<CadastroPostagem />} />
-          <Route path="/formularioPostagem/:id" element={<CadastroPostagem />} />
-          <Route path="/formularioTema" element={<CadastroTema />} />
-          <Route path="/formularioTema/:id" element={<CadastroTema />} />
-          <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
-          <Route path="/deletarTema/:id" element={<DeletarTema />} />
+          <Route path="/postagem" element={<ListaPostagem />} />
+          <Route path='/cadastrarPostagem' element={<CadastroPostagem />} />
+          <Route path='/editarPostagem/:id' element={<CadastroPostagem />} />
+          <Route path='/apagarPostagem/:id' element={<DeletarPostagem />} />
+          <Route path='/cadastrarTema' element={<CadastroTema />} />
+          <Route path='/editarTema/:id' element={<CadastroTema />} />
+          <Route path='/deletarTema/:id' element={<DeletarTema />} />
         </Routes>
       </div>
       <Footer />

@@ -54,7 +54,7 @@ function Navbar() {
                   <p style={{fontFamily:'cursive'}}>Temas</p>
                 </Box>
                 </Link>
-                <Link to='/formularioTema' className="text-decorator-none">
+                <Link to='/cadastrarTema' className="text-decorator-none">
                 <Box className="cursor">
                   <p style={{fontFamily:'cursive'}}>Cadastrar Tema</p>
                 </Box>
