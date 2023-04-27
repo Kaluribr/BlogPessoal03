@@ -25,10 +25,10 @@ function Navbar() {
     history('/login')
   }
 
-  var navbarConponent;
+  var navbarComponent;
 
   if(token !== ""){
-    navbarConponent = 
+    navbarComponent = 
     <Box >
     <AppBar position="static" className="navbar">
       <Toolbar>
@@ -81,7 +81,7 @@ function Navbar() {
   return (
     <>
       {/* O que é sx={{ flexGrow: 1 }*/}
-        {navbarConponent}
+        {navbarComponent}
     </>
   );
 }
