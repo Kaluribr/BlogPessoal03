@@ -5,6 +5,7 @@ import { cadastroUsuario } from "../../service/Service";
 import { Box, Button, Grid, TextField } from "@material-ui/core";
 import { Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function CadastroUsuario() {
   let history = useNavigate();
@@ -43,9 +44,27 @@ function CadastroUsuario() {
     if (confirmarSenha === usuario.senha) {
       try {
         await cadastroUsuario("/usuarios/cadastrar", usuario, setUsuarioResult);
-        alert("Usuário cadastrado com sucesso");
+        toast.success('Usuário cadastrado com sucesso', {
+          position: 'top-right',
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: 'colored',
+          progress: undefined,
+        })
       } catch (error) {
-        alert("Por favor, verifique os campos");
+        toast.error('Por favor, verifique os campos', {
+          position: 'top-right',
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: 'colored',
+          progress: undefined,
+        })
       }
     } else {
       alert("Dados inconsistentes. Favor verificar as informações de cadastro");
