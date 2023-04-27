@@ -4,10 +4,14 @@ import { useNavigate, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import  Tema  from '../../../models/Tema';
 import { buscaId, post, put } from '../../../service/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function CadastroTema() {
     const history = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState['tokens']>(
+      (state) => state.tokens
+    );
   
     const {id} = useParams<{id: string}>()
   

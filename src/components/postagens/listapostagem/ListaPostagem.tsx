@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@mui/material'
 import Postagem  from '../../../models/Postagem';
-import useLocalStorage from 'react-use-localstorage';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAll } from '../../../service/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 
 
 function ListaPostagens() {
 
   const[postagens, setPostagens] = useState<Postagem[]>([])
-  const[token, setToken] = useLocalStorage('token')
   const history = useNavigate()
+  const token = useSelector<TokenState, TokenState['tokens']>(
+    (state) => state.tokens
+  );
 
   async function getAllPostagens(){
     await getAll('/postagens', setPostagens, {

@@ -1,8 +1,18 @@
+.bc{
+  background-image: url(https://scontent.fqps2-1.fna.fbcdn.net/v/t39.30808-6/343051409_199947226135058_83558310621180240_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=0debeb&_nc_eui2=AeGCmkZt91hw5JPOUjuC4snP6kHsUGzPn9_qQexQbM-f33OCaUAyz5rrQ6GKulPDORkpv00peBVq_r2iuuIcD2c0&_nc_ohc=mYT3aqP6IXcAX8APIMP&_nc_ht=scontent.fqps2-1.fna&oh=00_AfD98GjRa0fnaqjmhalygo8HEtfT90Nq8yg1eX-HM66jWQ&oe=644EA2CE);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.formu{
+  justify-content: center;
+  background-color: white;
+  border-radius: 5%;
+}
+
 .imagemLogin {
-    background-image: url('https://i.giphy.com/media/10IbZpJN1k9D7q/giphy.webp');
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
+ 
   }
   
   .linkLogin {
@@ -12,4 +22,8 @@
   
   .linkLogin:hover {
     color: var(--blue-900)
+  }
+
+  .btnlogar{
+    background: radial-gradient(circle, rgba(255,165,112,1) 0%, rgba(154,80,0,1) 94%);
   }

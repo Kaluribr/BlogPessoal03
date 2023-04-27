@@ -1,20 +1,17 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
-import useLocalStorage from "react-use-localstorage";
-import { login } from '../../service/Service';
+import { login } from "../../service/Service";
 import "./Login.css";
 import { Grid, Box, TextField, Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import {
-  Link,
-  useNavigate,
-  Navigate,
-} from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import UsuarioLogin from "../../models/UsuarioLogin";
+import { useDispatch } from "react-redux";
+import { addToken } from "../../store/tokens/actions";
 
 function Login() {
   const history = useNavigate();
-
-  const [token, setToken] = useLocalStorage("token");
+  const dispatch = useDispatch();
+  const [token, setToken] = useState("");
 
   const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({
     id: 0,
@@ -32,17 +29,17 @@ function Login() {
     });
   }
 
-    useEffect(() => {
-      if (token != "") {
-        history("/home");
-      }
-    }, [token]);
-  
+  useEffect(() => {
+    if (token != "") {
+      dispatch(addToken(token))
+      history("/home");
+    }
+  }, [token]);
 
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
     try {
-      await login ('/usuarios/logar', usuarioLogin, setToken);
+      await login("/usuarios/logar", usuarioLogin, setToken);
       alert("Usuário logado com sucesso!");
     } catch (error) {
       alert("Dados do usuário inconsistentes. Erro ao logar!");
@@ -51,11 +48,11 @@ function Login() {
 
   return (
     <>
-      <Grid container alignItems={"center"}>
-        <Grid item xs={6} justifyContent="center">
+      <Grid container alignItems={"center"} className="bc">
+        <Grid item xs={12} justifyContent="center">
           <Box display="flex" justifyContent={"center"}>
-            <Grid item xs={6}>
-              <form onSubmit={onSubmit}>
+            <Grid item xs={3} className="formu">
+              <form onSubmit={onSubmit} className="formu">
                 <Typography
                   variant="h3"
                   align="center"
@@ -94,6 +91,7 @@ function Login() {
                     size="large"
                     variant="contained"
                     fullWidth
+                    className="btnlogar"
                   >
                     Logar
                   </Button>
